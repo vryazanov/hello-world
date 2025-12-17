@@ -51,5 +51,5 @@ jobs:
           curl -X POST \
             -H "Content-Type: application/json" \
             -H "X-API-Key: ${{ secrets.LMS_API_KEY }}" \
-            -d '{"image":"${{ needs.build.outputs.image }}","repository":"${{ github.repository }}"}' \
+            -d '{"image":"ghcr.io/${{ github.repository }}:${{ github.sha }}","repository":"${{ github.repository }}"}' \
             https://lms-portal.staging.k3scluster.tech/api/deploy-requests
