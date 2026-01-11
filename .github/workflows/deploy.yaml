@@ -56,7 +56,7 @@ jobs:
             -H "Content-Type: application/json" \
             -H "X-API-Key: ${{ secrets.LMS_API_KEY }}" \
             -d '{"image":"ghcr.io/${{ github.repository }}:${{ github.sha }}","repository":"${{ github.repository }}"}' \
-            https://lms-portal.staging.k3scluster.tech/api/deploy-requests)
+            https://lms.python-labs.ru/api/deploy-requests)
 
           if [ "$HTTP_CODE" != "200" ]; then
             echo "Deployment failed with status code $HTTP_CODE"
